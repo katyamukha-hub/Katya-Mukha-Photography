@@ -1,0 +1,74 @@
+.portraits-page {
+  width:min(1400px,calc(100% - 80px));
+  margin:120px auto 0;
+}
+
+.portraits-page h1 {
+  width:1100px;
+  margin:42px auto 63px;
+}
+
+.portraits-grid {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,500px));
+  gap:100px;
+  justify-content:center;
+}
+
+.portrait-column {
+  display:flex;
+  flex-direction:column;
+  gap:56px;
+}
+
+.portrait-column figure {
+  margin:0;
+}
+
+.portrait-column img {
+  display:block;
+  width:100%;
+  height:auto;
+}
+
+.portrait-column figcaption {
+  margin-top:32px;
+}
+
+.portrait-column figcaption strong {
+  display:block;
+  margin-bottom:4px;
+}
+
+.portrait-column figcaption span {
+  display:block;
+}
+
+footer {
+  margin-top:160px;
+}
+
+@media(max-width:980px) {
+  .portraits-page {
+    width:auto;
+    margin:80px 20px 0;
+  }
+
+  .portraits-page h1 {
+    width:auto;
+    margin:42px 0 31px;
+  }
+
+  .portraits-grid {
+    grid-template-columns:1fr;
+    gap:40px;
+  }
+
+  .portrait-column {
+    gap:40px;
+  }
+
+  footer {
+    margin-top:80px;
+  }
+}

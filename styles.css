@@ -1,0 +1,536 @@
+:root {
+  --black: #050505;
+  --page: 1440px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  min-width: 1000px;
+  background: #fff;
+}
+
+.site-header {
+  position: relative;
+  height: 420px;
+  width: 100%;
+}
+
+.brand {
+  position: absolute;
+  top: 27px;
+  left: 40px;
+}
+
+.brand-line {
+  display: block;
+}
+
+.brand i {
+  display: inline-block;
+  margin-right: -0.02em;
+}
+
+.brand i.brand-loose {
+  margin-right: -0.02em;
+}
+
+.intro {
+  position: absolute;
+  top: 188px;
+  left: 40px;
+  margin: 0;
+}
+
+.navigation {
+  position: absolute;
+  top: 34px;
+  right: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 19px;
+}
+
+.header-tools {
+  position: absolute;
+  top: 325px;
+  right: 40px;
+  display: flex;
+  align-items: center;
+  gap: 45px;
+}
+
+.language-switcher {
+  padding: 3px 10px 4px;
+  background: #050505;
+}
+
+.instagram {
+  display: block;
+  width: 35px;
+  height: 35px;
+}
+
+.instagram img {
+  display: block;
+  width: 35px;
+  height: 35px;
+}
+
+.projects {
+  width: min(1400px, calc(100% - 80px));
+  margin: 0 auto;
+}
+
+.projects h1 {
+  margin: 42px 0 63px;
+}
+
+.mobile-project-title {
+  display: none;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 355px));
+  column-gap: 40px;
+  align-items: start;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card img {
+  width: 100%;
+  object-fit: cover;
+  display: block;
+  margin-bottom: 38px;
+  transition: transform 280ms ease, filter 280ms ease;
+}
+
+.project-card:hover img {
+  transform: scale(1.025);
+  filter: contrast(1.05) brightness(0.94);
+}
+
+.lifeless img {
+  height: 472px;
+}
+
+.post-offices img {
+  height: 264px;
+  margin-bottom: 22px;
+}
+
+.project-card strong {
+  margin: 0 4px 6px;
+}
+
+.project-card span {
+  margin-left: 4px;
+}
+
+footer {
+  margin-top: 160px;
+  width: 100%;
+  height: 88px;
+  padding: 0 0 0 40px;
+  display: flex;
+  align-items: center;
+  background: #000;
+}
+
+.mobile-navigation {
+  display: none;
+}
+
+@media (max-width: 980px) {
+  html, body {
+    min-width: 0;
+  }
+
+  .site-header {
+    height: 440px;
+  }
+
+  .brand {
+    top: 30px;
+    left: 20px;
+  }
+
+  .intro {
+    top: 191px;
+    left: 20px;
+  }
+
+  .navigation, .instagram {
+    display: none;
+  }
+
+  .header-tools {
+    top: 291px;
+    left: 25px;
+    right: auto;
+  }
+
+  .header-tools .instagram {
+    display: block;
+    position: absolute;
+    left: calc(100vw - 80px);
+    top: -261px;
+    width: 35px;
+    height: 35px;
+  }
+
+  .language-switcher {
+    padding: 3px 10px 4px;
+  }
+
+  .projects {
+    width: auto;
+    margin: 0 20px;
+  }
+
+  .projects h1 {
+    margin: 42px 0 31px;
+  }
+
+  .desktop-project-title {
+    display: none;
+  }
+
+  .mobile-project-title {
+    display: inline;
+  }
+
+  .project-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-left: 12px;
+  }
+
+  .project-card {
+    display: block;
+  }
+
+  .project-card img, .project-card strong, .project-card span {
+    display: none;
+  }
+
+  .project-card::after {
+    content: '→ ' attr(data-title);
+  }
+
+  .project-card.lifeless::after {
+    content: '→ Lifeless';
+  }
+
+  .project-card.post-offices::after {
+    content: '→ Russian Post';
+  }
+
+  .mobile-navigation {
+    display: flex;
+    flex-direction: column;
+    gap: 29px;
+    margin: 70px 20px 0;
+  }
+
+  footer {
+    margin-top: 145px;
+    height: 88px;
+    padding-left: 20px;
+  }
+}
+
+/* Typography: shared styles and page-specific styles. */
+
+/* Shared typography */
+
+html, body {
+  color: var(--black);
+}
+
+body {
+  font-family: Inter, Arial, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.brand {
+  font: 800 80px/80px Epilogue, Arial, sans-serif;
+  letter-spacing: 0.05em;
+}
+
+.brand-line {
+  white-space: nowrap;
+}
+
+.brand i {
+  font-style: normal;
+}
+
+.brand:hover {
+  color: #1748ff;
+}
+
+.intro {
+  font: 400 18px/28px Epilogue, Arial, sans-serif;
+}
+
+.navigation {
+  font: 400 26px/26px Epilogue, Arial, sans-serif;
+  letter-spacing: 0.03em;
+}
+
+.language-switcher {
+  color: #fff;
+  font: 400 20px/24px Epilogue, Arial, sans-serif;
+}
+
+.projects h1 {
+  font: 800 33px/33px Epilogue, Arial, sans-serif;
+  letter-spacing: 0.05em;
+}
+
+.projects h1 em {
+  font-style: normal;
+  font-weight: 400;
+}
+
+.project-card {
+  font-family: Inter, Arial, sans-serif;
+}
+
+.project-card strong {
+  font: 500 18px/18px Epilogue, Arial, sans-serif;
+  letter-spacing: 0.02em;
+}
+
+.project-card span {
+  font: 400 14px/22px Inter, Arial, sans-serif;
+}
+
+.project-card span:last-child {
+  font-size: 15px;
+  line-height: 23px;
+}
+
+footer {
+  color: #fff;
+  font: 400 14px/14px Epilogue, Arial, sans-serif;
+  letter-spacing: 0.03em;
+}
+
+@media (max-width: 980px) {
+  .brand {
+    font-size: 80px;
+    line-height: 80px;
+  }
+
+  .intro {
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  .language-switcher {
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  .projects h1 {
+    font-size: 38px;
+    line-height: 38px;
+    letter-spacing: 0.03em;
+    font-weight: 400;
+  }
+
+  .project-card::after {
+    font: 300 20px/20px Epilogue, Arial, sans-serif;
+    letter-spacing: 0.03em;
+  }
+
+  .mobile-navigation {
+    font: 400 38px/38px Epilogue, Arial, sans-serif;
+    letter-spacing: 0.03em;
+  }
+
+  footer {
+    font-size: 14px;
+  }
+}
+
+/* bio typography */
+
+.bio-page h1 {
+  font:800 33px/33px Epilogue,Arial,sans-serif;
+  letter-spacing:.05em;
+}
+
+.bio-intro,.cv {
+  font:300 15px/23px Inter,Arial,sans-serif;
+}
+
+.cv h2 {
+  font:700 18px/22px Epilogue,Arial,sans-serif;
+}
+
+.cv b {
+  font-weight:600;
+}
+
+@media(max-width:980px) {
+  .bio-page h1 {
+    font-size:38px;
+    line-height:38px;
+    letter-spacing:.03em;
+    font-weight:400;
+  }
+
+  .bio-intro,.cv {
+    font-size:16px;
+    line-height:25px;
+  }
+}
+
+/* contact typography */
+
+.contact-details {
+  font:400 15px/1.55 Inter,Arial,sans-serif;
+}
+
+.contact-details a {
+  color:inherit;
+  text-decoration:none;
+}
+
+.social {
+  font-weight:700;
+  letter-spacing:.03em;
+}
+
+.contact-form input,.contact-form textarea {
+  font:400 13px/1.2 Inter,Arial,sans-serif;
+  color:#222;
+}
+
+.contact-form input::placeholder,.contact-form textarea::placeholder {
+  color:#888;
+}
+
+.contact-form button {
+  font:700 12px/1 Inter,Arial,sans-serif;
+}
+
+@media(max-width:980px) {
+  .contact-details {
+    font-size:16px;
+  }
+
+  .contact-form input,.contact-form textarea {
+    font-size:18px;
+  }
+
+  .contact-form button {
+    font-size:18px;
+  }
+}
+
+/* portraits typography */
+
+.portraits-page h1 {
+  font:800 33px/33px Epilogue,Arial,sans-serif;
+  letter-spacing:.05em;
+}
+
+.portrait-column figcaption {
+  text-align:center;
+  font:400 14px/18px Inter,Arial,sans-serif;
+}
+
+.portrait-column figcaption strong {
+  font-weight:700;
+}
+
+.portrait-column figcaption span {
+  font-weight:400;
+}
+
+@media(max-width:980px) {
+  .portraits-page h1 {
+    font-size:38px;
+    line-height:38px;
+    letter-spacing:.03em;
+    font-weight:400;
+  }
+}
+
+/* publications typography */
+
+.publications-page h1 {
+  font:800 33px/33px Epilogue,Arial,sans-serif;
+  letter-spacing:.05em;
+}
+
+@media(max-width:980px) {
+  .publications-page h1 {
+    font-size:38px;
+    line-height:38px;
+    letter-spacing:.03em;
+    font-weight:400;
+  }
+}
+
+/* russian-post typography */
+
+.project-intro {
+  text-align: center;
+}
+
+.project-intro h1 {
+  font: 600 45px/45px Epilogue, Arial, sans-serif;
+  letter-spacing: .05em;
+}
+
+.project-intro p {
+  text-align: center;
+  font: 400 14px/22px Inter, Arial, sans-serif;
+}
+
+.project-copy {
+  text-align: left;
+  font: 300 15px/23px Inter, Arial, sans-serif;
+}
+
+.project-ending {
+  text-align: left;
+  font: 300 15px/23px Inter, Arial, sans-serif;
+}
+
+@media (max-width: 980px) {
+  .project-intro h1 {
+    font-size: 49px;
+    line-height: 49px;
+    letter-spacing: .05em;
+  }
+
+  .project-intro p {
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  .project-copy, .project-ending {
+    font-size: 16px;
+    line-height: 25px;
+  }
+}
